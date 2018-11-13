@@ -1,7 +1,7 @@
 # D3D
 ## Introduction   
 
-This is the respository of the proposed method in [LRW-1000: A Naturally-Distributed Large-Scale Benchmark for Lip Reading in the Wild](). Our paper can be found [here](https://arxiv.org/pdf/1810.06990.pdf).
+This respository is implementation of the proposed method in [LRW-1000: A Naturally-Distributed Large-Scale Benchmark for Lip Reading in the Wild](). Our paper can be found [here](https://arxiv.org/pdf/1810.06990.pdf).
 ## Dependencies
 * python 3.6.7   
 * pytorch 1.0.0.dev20181103

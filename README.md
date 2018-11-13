@@ -7,7 +7,7 @@ This respository is implementation of the proposed method in [LRW-1000: A Natura
 * pytorch 1.0.0.dev20181103
 * scipy 1.1.0
 ## Dataset
-This model is pretrained on LRW with RGB lip images(112×112), and then tranfer to LRW-1000 with the same size.    
+This model is pretrained on LRW with RGB lip images(112×112), and then tranfer to LRW-1000 with the same size. We train the model end-to-end.   
 ## Training   
 You can train the model as follow:
 ```
@@ -29,5 +29,6 @@ If this repository was useful for your research, please cite our work:
   title={LRW-1000: A Naturally-Distributed Large-Scale Benchmark for Lip Reading in the Wild},
   author={Shuang Yang, Yuanhang Zhang, Dalu Feng, Mingmin Yang, Chenhao Wang, Jingyun Xiao, Keyu Long, Shiguang Shan, Xilin Chen},
   booktitle={arXiv},
+  year={2018}
 }
 ```

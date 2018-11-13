@@ -25,7 +25,7 @@ Please pay attention that you may need modify the code in [dataset.py]() and cha
 If this repository was useful for your research, please cite our work:
 
 ```
-@article{petridis2018end,
+@article{LRW-1000-2018,
   title={LRW-1000: A Naturally-Distributed Large-Scale Benchmark for Lip Reading in the Wild},
   author={Shuang Yang, Yuanhang Zhang, Dalu Feng, Mingmin Yang, Chenhao Wang, Jingyun Xiao, Keyu Long, Shiguang Shan, Xilin Chen},
   booktitle={arXiv},

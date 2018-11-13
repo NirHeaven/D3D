@@ -7,7 +7,7 @@ This is the respository of the proposed method in [LRW-1000: A Naturally-Distrib
 * pytorch 1.0.0.dev20181103
 * scipy 1.1.0
 ## Dataset
-This model is pretrained on LRW with RGB lip images(112×112), and then tranfer to LRW-1000.    
+This model is pretrained on LRW with RGB lip images(112×112), and then tranfer to LRW-1000 with the same size.    
 ## Training   
 You can train the model as follow:
 ```

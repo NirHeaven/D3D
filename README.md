@@ -19,7 +19,7 @@ All the parameters we use is set as default value in [args.py]().You can also pa
 python main.py --gpus 0,1 --batch_size XXX --lr 1e-4 --data_root "data path" --index_root "index root"
 ```
 **Note**:   
-Please pay attention to that you may need modify the code in [dataset.py]() and change the parameters `data_root` and `index_root` to make the scripts work just as expected. 
+Please pay attention that you may need modify the code in [dataset.py]() and change the parameters `data_root` and `index_root` to make the scripts work just as expected. 
 ## Reference
 
 If this repository was useful for your research, please cite our work:

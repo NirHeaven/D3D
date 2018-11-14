@@ -137,8 +137,8 @@ def tst_epoch(model, data_loader, epoch, stage):
                         time.time() - since,
                         (time.time() - since) * (data_len - 1) / i_batch - (time.time() - since))),
         acc = float(running_corrects) / n_samples
-        print('{} Epoch:\t{:2}\tAcc:{:.4f}'.format(
+        print('{} Epoch:\t{:2}\tAcc:{:.4f}\n'.format(
             stage,
             epoch,
-            acc + '\n'))
+            acc))
         return acc

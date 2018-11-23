@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from modules import _DenseBlock, _Transition
+from .modules import _DenseBlock, _Transition
 from collections import OrderedDict
 import math
 

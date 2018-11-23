@@ -37,9 +37,9 @@ if args.opt.lower() == 'adam':
 if args.opt.lower() == 'sgd':
     optimizer = optim.SGD(model.parameters(), lr=args.lr, weight_decay=0.001, nesterov=True)
 
-if args.train:
+if not args.no_train:
     scheduler = AdjustLR(optimizer, [args.lr], sleep_epochs=1, half=5)
-    trn_index = os.path.join(args.index_root, 'trn.txt')
+    trn_index = os.path.join(args.index_root, 'trn_1000.txt')
     dataset = LipreadingDataset(data_root=args.data_root, index_root=trn_index, padding=args.padding)
     trn_loader = DataLoader(dataset,
                             batch_size=args.batch_size,
@@ -47,8 +47,8 @@ if args.train:
                             num_workers=args.num_workers,
                             drop_last=False)
     trn_len = len(trn_loader)
-if args.val:
-    val_index = os.path.join(args.index_root, 'val.txt')
+if not args.no_val:
+    val_index = os.path.join(args.index_root, 'val_1000.txt')
     dataset = LipreadingDataset(data_root=args.data_root, index_root=val_index, padding=args.padding, augment=False)
     val_loader = DataLoader(dataset,
                             batch_size=args.batch_size,
@@ -56,7 +56,7 @@ if args.val:
                             num_workers=args.num_workers,
                             drop_last=False)
     val_len = len(val_loader)
-    tst_index = os.path.join(args.index_root, 'tst.txt')
+    tst_index = os.path.join(args.index_root, 'tst_1000.txt')
     dataset = LipreadingDataset(data_root=args.data_root, index_root=tst_index, padding=args.padding, augment=False)
     tst_loader = DataLoader(dataset,
                             batch_size=args.batch_size,
@@ -66,11 +66,11 @@ if args.val:
     tst_len = len(tst_loader)
 
 
-if args.train:
+if not args.no_train:
     for epoch in range(args.s_epoch, args.epoch):
         scheduler.step(epoch)
         trn_epoch(model=model, data_loader=trn_loader, optimizer=optimizer, epoch=epoch)
-        if args.val:
+        if not args.no_val:
             val_acc = tst_epoch(model=model, data_loader=val_loader,  epoch=epoch, stage='val')
             tst_acc = tst_epoch(model=model, data_loader=tst_loader,  epoch=epoch, stage='tst')
             if hasattr(model, 'module'):
@@ -80,7 +80,7 @@ if args.train:
             state_dict['val_acc'] = val_acc
             state_dict['test_acc'] = tst_acc
         torch.save(state_dict, args.save_path + '/' + str(epoch + 1) + '_.pt')
-if args.val:
+if not args.no_val:
     val_acc = tst_epoch(model=model, data_loader=val_loader,  epoch=0, stage='val')
     tst_acc = tst_epoch(model=model, data_loader=tst_loader,  epoch=0, stage='tst')
 
